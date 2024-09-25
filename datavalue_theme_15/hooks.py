@@ -1,28 +1,53 @@
+from . import __version__ as version
+
+app_version = version
 app_name = "datavalue_theme_15"
 app_title = "Datavalue Theme 15"
-app_publisher = "sammish"
-app_description = "datavalue_theme_15"
-app_email = "sammish.thundiyil@gmail.com"
+app_publisher = "Abdo Hamoud"
+app_description = "Frappe 15 Theme App"
+app_email = "abdo.host@gmail.com"
 app_license = "mit"
-
-# Apps
-# ------------------
-
 # required_apps = []
-
-# Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "datavalue_theme_15",
-# 		"logo": "/assets/datavalue_theme_15/logo.png",
-# 		"title": "Datavalue Theme 15",
-# 		"route": "/datavalue_theme_15",
-# 		"has_permission": "datavalue_theme_15.api.permission.has_app_permission"
-# 	}
-# ]
 
 # Includes in <head>
 # ------------------
+
+website_context = {
+    "favicon": "/assets/datavalue_theme_15/images/datavlue-new-icon-xs.png",
+    "splash_image": "/assets/datavalue_theme_15/images/theme_splash_empty.jpg"
+}
+
+app_include_css = [
+    "/assets/datavalue_theme_15/plugins/animate.css/animate.min.css",
+    "/assets/datavalue_theme_15/plugins/fontawesome/all.min.css",
+    "/assets/datavalue_theme_15/plugins/tooltip/tooltip-theme-twipsy.css",
+    "/assets/datavalue_theme_15/plugins/flat-icons/flaticon.css",
+    "/assets/datavalue_theme_15/plugins/simple-calendar/simple-calendar.css",
+    "datavalue_theme.bundle.css"
+]
+
+app_include_js = [
+    "/assets/datavalue_theme_15/plugins/vue/vue.js",
+    "/assets/datavalue_theme_15/plugins/bootstrap4c-chosen/chosen.min.js",
+    "/assets/datavalue_theme_15/plugins/nicescroll/nicescroll.js",
+    "/assets/datavalue_theme_15/plugins/tooltip/tooltip.js",
+    "/assets/datavalue_theme_15/plugins/jquery-fullscreen/jquery.fullscreen.min.js?ver=1",
+    "/assets/datavalue_theme_15/plugins/simple-calendar/jquery.simple-calendar.js",
+    "/assets/datavalue_theme_15/js/datavalue_theme.app.min.js?ver="+app_version
+    # "datavalue_theme.bundle.js"
+]
+
+email_brand_image = "assets/datavalue_theme_15/images/logo-v.png"
+
+# include js, css files in header of web template
+web_include_css = [
+    "assets/datavalue_theme_15/plugins/fontawesome/all.min.css",
+    "assets/datavalue_theme_15/css/login.css",
+    "assets/datavalue_theme_15/css/dv-login.css?ver=" + app_version
+]
+web_include_js = [
+    "/assets/datavalue_theme_15/js/datavalue_theme.web.min.js?ver=" + app_version
+]
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/datavalue_theme_15/css/datavalue_theme_15.css"
@@ -61,7 +86,7 @@ app_license = "mit"
 
 # website user home page (by Role)
 # role_home_page = {
-# 	"Role": "home_page"
+#	"Role": "home_page"
 # }
 
 # Generators
@@ -75,8 +100,8 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "datavalue_theme_15.utils.jinja_methods",
-# 	"filters": "datavalue_theme_15.utils.jinja_filters"
+#	"methods": "datavalue_theme_15.utils.jinja_methods",
+#	"filters": "datavalue_theme_15.utils.jinja_filters"
 # }
 
 # Installation
@@ -118,11 +143,11 @@ app_license = "mit"
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+#	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
 #
 # has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
+#	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
 # DocType Class
@@ -130,7 +155,7 @@ app_license = "mit"
 # Override standard doctype classes
 
 # override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
+#	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
 # Document Events
@@ -138,32 +163,32 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
+#	"*": {
+#		"on_update": "method",
+#		"on_cancel": "method",
+#		"on_trash": "method"
+#	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
 # scheduler_events = {
-# 	"all": [
-# 		"datavalue_theme_15.tasks.all"
-# 	],
-# 	"daily": [
-# 		"datavalue_theme_15.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"datavalue_theme_15.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"datavalue_theme_15.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"datavalue_theme_15.tasks.monthly"
-# 	],
+#	"all": [
+#		"datavalue_theme_15.tasks.all"
+#	],
+#	"daily": [
+#		"datavalue_theme_15.tasks.daily"
+#	],
+#	"hourly": [
+#		"datavalue_theme_15.tasks.hourly"
+#	],
+#	"weekly": [
+#		"datavalue_theme_15.tasks.weekly"
+#	],
+#	"monthly": [
+#		"datavalue_theme_15.tasks.monthly"
+#	],
 # }
 
 # Testing
@@ -175,14 +200,14 @@ app_license = "mit"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "datavalue_theme_15.event.get_events"
+#	"frappe.desk.doctype.event.event.get_events": "datavalue_theme_15.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "datavalue_theme_15.task.get_dashboard_data"
+#	"Task": "datavalue_theme_15.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -208,37 +233,36 @@ app_license = "mit"
 # --------------------
 
 # user_data_fields = [
-# 	{
-# 		"doctype": "{doctype_1}",
-# 		"filter_by": "{filter_by}",
-# 		"redact_fields": ["{field_1}", "{field_2}"],
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_2}",
-# 		"filter_by": "{filter_by}",
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_3}",
-# 		"strict": False,
-# 	},
-# 	{
-# 		"doctype": "{doctype_4}"
-# 	}
+#	{
+#		"doctype": "{doctype_1}",
+#		"filter_by": "{filter_by}",
+#		"redact_fields": ["{field_1}", "{field_2}"],
+#		"partial": 1,
+#	},
+#	{
+#		"doctype": "{doctype_2}",
+#		"filter_by": "{filter_by}",
+#		"partial": 1,
+#	},
+#	{
+#		"doctype": "{doctype_3}",
+#		"strict": False,
+#	},
+#	{
+#		"doctype": "{doctype_4}"
+#	}
 # ]
 
 # Authentication and authorization
 # --------------------------------
 
 # auth_hooks = [
-# 	"datavalue_theme_15.auth.validate"
+#	"datavalue_theme_15.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
 # export_python_type_annotations = True
 
 # default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
+#	"Logging DocType Name": 30  # days to retain logs
 # }
-

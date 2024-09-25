@@ -1,0 +1,165 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?6e22a5819d71bd7bfea3040d0d7b258b") format("truetype"),
+url("./flaticon.woff?6e22a5819d71bd7bfea3040d0d7b258b") format("woff"),
+url("./flaticon.woff2?6e22a5819d71bd7bfea3040d0d7b258b") format("woff2"),
+url("./flaticon.eot?6e22a5819d71bd7bfea3040d0d7b258b#iefix") format("embedded-opentype"),
+url("./flaticon.svg?6e22a5819d71bd7bfea3040d0d7b258b#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "coin": "\f101",
+    "agriculture": "\f102",
+    "ingot": "\f103",
+    "shopping-bags": "\f104",
+    "customer": "\f105",
+    "pie-chart": "\f106",
+    "admin": "\f107",
+    "tools": "\f108",
+    "setting-lines": "\f109",
+    "mortarboard": "\f10a",
+    "first-aid-kit": "\f10b",
+    "briefcase": "\f10c",
+    "customer-1": "\f10d",
+    "businessman": "\f10e",
+    "combine": "\f10f",
+    "industry": "\f110",
+    "solidarity": "\f111",
+    "pay-day": "\f112",
+    "configuration": "\f113",
+    "shield": "\f114",
+    "pos": "\f115",
+    "valid": "\f116",
+    "credit-card": "\f117",
+    "box": "\f118",
+    "support": "\f119",
+    "building": "\f11a",
+    "browser": "\f11b",
+    "setting": "\f11c",
+    "folder": "\f11d",
+    "cogwheel": "\f11e",
+    "home": "\f11f",
+    "cart": "\f120",
+    "speedometer": "\f121",
+    "menu": "\f122",
+    "menu-1": "\f123",
+);
+
+.flaticon-coin:before {
+    content: map-get($flaticon-map, "coin");
+}
+.flaticon-agriculture:before {
+    content: map-get($flaticon-map, "agriculture");
+}
+.flaticon-ingot:before {
+    content: map-get($flaticon-map, "ingot");
+}
+.flaticon-shopping-bags:before {
+    content: map-get($flaticon-map, "shopping-bags");
+}
+.flaticon-customer:before {
+    content: map-get($flaticon-map, "customer");
+}
+.flaticon-pie-chart:before {
+    content: map-get($flaticon-map, "pie-chart");
+}
+.flaticon-admin:before {
+    content: map-get($flaticon-map, "admin");
+}
+.flaticon-tools:before {
+    content: map-get($flaticon-map, "tools");
+}
+.flaticon-setting-lines:before {
+    content: map-get($flaticon-map, "setting-lines");
+}
+.flaticon-mortarboard:before {
+    content: map-get($flaticon-map, "mortarboard");
+}
+.flaticon-first-aid-kit:before {
+    content: map-get($flaticon-map, "first-aid-kit");
+}
+.flaticon-briefcase:before {
+    content: map-get($flaticon-map, "briefcase");
+}
+.flaticon-customer-1:before {
+    content: map-get($flaticon-map, "customer-1");
+}
+.flaticon-businessman:before {
+    content: map-get($flaticon-map, "businessman");
+}
+.flaticon-combine:before {
+    content: map-get($flaticon-map, "combine");
+}
+.flaticon-industry:before {
+    content: map-get($flaticon-map, "industry");
+}
+.flaticon-solidarity:before {
+    content: map-get($flaticon-map, "solidarity");
+}
+.flaticon-pay-day:before {
+    content: map-get($flaticon-map, "pay-day");
+}
+.flaticon-configuration:before {
+    content: map-get($flaticon-map, "configuration");
+}
+.flaticon-shield:before {
+    content: map-get($flaticon-map, "shield");
+}
+.flaticon-pos:before {
+    content: map-get($flaticon-map, "pos");
+}
+.flaticon-valid:before {
+    content: map-get($flaticon-map, "valid");
+}
+.flaticon-credit-card:before {
+    content: map-get($flaticon-map, "credit-card");
+}
+.flaticon-box:before {
+    content: map-get($flaticon-map, "box");
+}
+.flaticon-support:before {
+    content: map-get($flaticon-map, "support");
+}
+.flaticon-building:before {
+    content: map-get($flaticon-map, "building");
+}
+.flaticon-browser:before {
+    content: map-get($flaticon-map, "browser");
+}
+.flaticon-setting:before {
+    content: map-get($flaticon-map, "setting");
+}
+.flaticon-folder:before {
+    content: map-get($flaticon-map, "folder");
+}
+.flaticon-cogwheel:before {
+    content: map-get($flaticon-map, "cogwheel");
+}
+.flaticon-home:before {
+    content: map-get($flaticon-map, "home");
+}
+.flaticon-cart:before {
+    content: map-get($flaticon-map, "cart");
+}
+.flaticon-speedometer:before {
+    content: map-get($flaticon-map, "speedometer");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}
+.flaticon-menu-1:before {
+    content: map-get($flaticon-map, "menu-1");
+}

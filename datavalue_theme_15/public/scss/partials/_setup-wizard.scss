@@ -1,0 +1,19 @@
+body[data-route^="setup-wizard"] {
+  .side-menu {
+    display: none;
+  }
+
+  .dv-app-content {
+    margin-left: 0px;
+    margin-right: 0px;
+
+    .page-container {
+      max-width: 1024px;
+      margin: 0 auto;
+
+      .setup-wizard-slide {
+        padding: 10px 0px !important;
+      }
+    }
+  }
+}

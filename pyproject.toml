@@ -1,9 +1,9 @@
 [project]
 name = "datavalue_theme_15"
 authors = [
-    { name = "sammish", email = "sammish.thundiyil@gmail.com"}
+    { name = "Abdo Hamoud", email = "abdo.host@gmail.com"}
 ]
-description = "datavalue_theme_15"
+description = "Frappe 15 Theme App"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

@@ -1,0 +1,449 @@
+.Workspaces-Home-Component {
+  margin: 0px;
+
+  .workspace-tabs {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    min-height: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+
+    > ul {
+      margin: 0px;
+      padding: 15px;
+      width: 100%;
+      list-style: none;
+      display: flex;
+      overflow-x: auto; /* Enable horizontal scrollbar */
+      white-space: nowrap; /* Prevent items from wrapping */
+
+      > li {
+        flex: 0 0 auto;
+        margin-right: 10px;
+
+        > a {
+          background: transparent;
+          display: block;
+          height: 40px;
+          line-height: 40px;
+          padding: 0px 15px;
+          font-size: 18px;
+          font-weight: 600;
+          color: #666666;
+          border-radius: 7px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            background: #eeeeee;
+            color: #333333;
+          }
+        }
+
+        &.active {
+          > a {
+            background: $my_color;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .workplace-card-block {
+    background: #fffcf8;
+    border: 1px solid #c49b6c;
+    box-shadow: 0px 1px 10px -2px #0000001f;
+    border-radius: 8px;
+
+    .workplace-card-block-head {
+      background: #e9ccab;
+      border-bottom: 1px solid #c49b6c;
+      border-radius: 7px 7px 0px 0px;
+      margin: 0px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #000000;
+      padding: 10px 15px;
+
+      > i {
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .workplace-notes-slider-nav, .workplace-action-slider-nav, .workplace-recent-activities-slider-nav, .workplace-todo-slider-nav, .workplace-todo-slider-nav {
+        display: block;
+        float: right;
+
+        > button {
+          background: #f5f5f5;
+          border: 1px solid #dddddd;
+          height: 24px;
+          width: 30px;
+          padding: 0px;
+          font-size: 18px;
+          color: #888888;
+          line-height: 23px;
+          text-align: center;
+          outline: none;
+          border-radius: 5px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            border-color: #aaaaaa;
+            color: #333333;
+          }
+
+          &.btn-new {
+            background: $my_color;
+            border-color: $my_color;
+            color: #ffffff;
+
+            &:hover {
+              background: $my_color_hover;
+            }
+          }
+        }
+      }
+    }
+
+    .workplace-card-block-body {
+      padding: 15px;
+
+      .workplace-calendar-container {
+        position: relative;
+        max-width: 100%;
+        height: 450px;
+        overflow: hidden;
+      }
+
+      .workplace-action-center {
+        margin: -15px;
+        height: auto;
+
+        ul {
+          margin: 0px;
+          padding: 0px;
+
+          > li {
+            border-bottom: 1px solid #dbdfea;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+
+            > div.workplace-action-content {
+              position: relative;
+              padding-left: 2.6rem;
+              padding-right: 0.5rem;
+
+              > i {
+                font-size: 1.5rem;
+                top: 2px;
+                left: 0;
+                position: absolute;
+                color: #8094ae;
+              }
+
+              > div {
+                font-size: 14px;
+                font-weight: 600;
+                padding-bottom: 0.25rem
+              }
+
+              > p {
+                color: #8094ae;
+                font-size: 13px;
+                line-height: 1.25rem;
+                height: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+                -webkit-box-orient: vertical;
+
+                > b {
+                  color: $my_color;
+                }
+              }
+            }
+
+            .btn.btn-icon {
+              background: transparent;
+              margin: 0px;
+              font-size: 35px;
+              width: 40px;
+              height: 40px;
+              line-height: 41px;
+              padding: 0;
+              color: #999999;
+              border-radius: 100%;
+              transition: all 0.2s ease-in-out;
+
+              &:hover {
+                background: #eeeeee;
+                color: #444444;
+              }
+            }
+
+            &:last-child {
+              border: 0px;
+            }
+          }
+        }
+      }
+
+      .workplace-recent-activities {
+        margin: -15px;
+
+        ul {
+          margin: 0px;
+          padding: 0px;
+
+          > li {
+            border-bottom: 1px solid #dbdfea;
+            display: block;
+            padding: 17px 15px;
+
+            > img {
+              background: #eeeeee;
+              display: block;
+              width: 45px;
+              height: 45px;
+              float: left;
+              margin-right: 15px;
+              border-radius: 50%;
+            }
+
+            .workplace-recent-activities-content {
+              margin: 0px;
+
+              > div.title {
+                font-size: 14px;
+                font-weight: 700;
+                color: $my_color;
+                padding-bottom: 0.25rem;
+
+                > span {
+                  color: $my_color;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: block;
+                  float: right;
+                }
+              }
+
+              > p {
+                color: #666666;
+                font-size: 13px;
+                line-height: 1.25rem;
+                height: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+                -webkit-box-orient: vertical;
+              }
+            }
+
+            &:last-child {
+              border: 0px;
+            }
+          }
+        }
+      }
+
+      .workplace-notes {
+        height: auto;
+        overflow: hidden;
+        margin: 0px;
+
+        .workplace-notes-slider {
+          > .workplace-notes-slider-item {
+            background: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+
+            h4 {
+              font-size: 18px;
+              font-weight: 700;
+              margin: 0px;
+            }
+
+            span {
+              display: block;
+              font-size: 13px;
+              color: #888888;
+              margin: 14px 0px;
+            }
+
+            p {
+              color: #666666;
+            }
+          }
+        }
+      }
+
+      .workplace-todo-list {
+        margin: 0px;
+        height: auto;
+
+        .workplace-todo-widget {
+          background: #ffffff;
+          box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.25);
+          height: 95px;
+          border: 1px solid #dddddd;
+          border-left: 4px solid #aaaaaa;
+          margin-bottom: 15px;
+          padding: 15px;
+          position: relative;
+          overflow: hidden;
+
+          h4 {
+            margin: 0px;
+            font-size: 14px;
+            font-weight: 700;
+
+            .todo-actions {
+              margin-left: auto;
+
+              .btn {
+                font-size: 12px;
+                padding: 2px 8px;
+                margin-left: 4px;
+
+                &.btn-close {
+                  background: #fc7730;
+                  color: #fff;
+                  transition: all 0.2s ease-in-out;
+
+                  &:hover, &:active {
+                    background: #d05c1f;
+                  }
+                }
+
+                &.btn-cancel {
+                  background: #e83b3b;
+                  color: #fff;
+
+                  &:hover, &:active {
+                    background: #b02929;
+                  }
+                }
+              }
+            }
+          }
+
+          p {
+            margin: 6px 0px 0px 0px;
+          }
+
+          .todo-created-by {
+            margin: 5px 0px 0px 0px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #777777;
+          }
+
+          .todo-status {
+            background: transparent;
+            border: 1px solid #aaaaaa;
+            width: auto;
+            height: 20px;
+            line-height: 18px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333c44;
+            padding: 0px 10px;
+            display: inline-block;
+            margin-left: 8px;
+            border-radius: 4px;
+
+            &.todo-status-Open {
+              border-color: #9dce9d;
+              color: #5a9d5a;
+            }
+
+            &.todo-status-Closed {
+              background: #cc6666;
+            }
+          }
+
+          .todo-date {
+            width: auto;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            color: #336699;
+            font-weight: 600;
+            padding: 0px;
+            display: block;
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+          }
+
+          &.todo-priority-High {
+            border-left-color: #cc6666;
+          }
+
+          &.todo-priority-Medium {
+            border-left-color: #ff9d3a;
+          }
+
+          &.todo-priority-Low {
+            border-left-color: #9dce9d;
+          }
+        }
+      }
+    }
+  }
+}
+
+.calendar {
+  header {
+    .month .year {
+      position: relative;
+      top: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .simple-calendar-btn {
+      background: #e9ccab;
+      border: 1px solid #c49b6c;
+      color: #000000;
+      border-radius: 7px;
+
+      &:hover {
+        background: $my_color;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .day {
+    width: 40px $imp;
+    height: 40px $imp;
+    line-height: 40px $imp;
+    font-size: 18px $imp;
+    font-weight: 600 $imp;
+    border-radius: 7px $imp;
+
+    &.today {
+      border: 3px solid $my_color_hover;
+      line-height: 33px $imp;
+    }
+
+    &.has-event {
+      background: $my_color;
+
+      &:hover {
+        background: $my_color_hover;
+      }
+    }
+  }
+}

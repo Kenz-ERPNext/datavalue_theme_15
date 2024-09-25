@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "FC..#####",
+ "creation": "2024-09-07 22:16:37.237674",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "number_card_name",
+  "doctype_form",
+  "column_break_ovgo",
+  "label"
+ ],
+ "fields": [
+  {
+   "fieldname": "number_card_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Number Card Name",
+   "options": "Number Card",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "Label"
+  },
+  {
+   "fieldname": "doctype_form",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctype Form",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ovgo",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-08 12:03:03.161115",
+ "modified_by": "Administrator",
+ "module": "Datavalue Theme 15",
+ "name": "Form Number Card",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dashboard Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

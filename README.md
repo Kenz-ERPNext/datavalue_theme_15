@@ -1,6 +1,6 @@
 ## Datavalue Theme 15
 
-datavalue_theme_15
+Frappe 15 Theme App
 
 #### License
 

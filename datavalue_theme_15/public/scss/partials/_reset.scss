@@ -1,0 +1,221 @@
+$imp: !important;
+$body_bg_color: #f8fafb;
+$my_color: #14a6ef;
+$my_color_hover: #108bc9;
+$gray_color: #f4f5f6;
+
+$green_color_style_light: #dff0e0;
+$green_color_style: #43a047;
+$green_color_style_hover: #2a7e2e;
+
+$red_color_style_light: #ffd7d6;
+$red_color_style: #e53935;
+$red_color_style_hover: #be2724;
+
+$orange_color_style_light: #ffe8c8;
+$orange_color_style: #fb8c00;
+$orange_color_style_hover: #d07706;
+
+$yellow_color_style_light: #fff2cd;
+$yellow_color_style: #ffca28;
+$yellow_color_style_hover: #deae1b;
+
+$pink_color_style_light: #ffdde8;
+$pink_color_style: #ec407a;
+$pink_color_style_hover: #b92a5a;
+
+$violet_color_style_light: #fbe0ff;
+$violet_color_style: #ab47bc;
+$violet_color_style_hover: #773183;
+
+$dark_gray_color_style_light: #ced4e3;
+$dark_gray_color_style: #393f4b;
+$dark_gray_color_style_hover: #24272e;
+
+:root {
+
+  --blue_color_style_light: #edf8ff;
+  --blue_color_style: #007BFF;
+  --blue_color_style_hover: #0065cd;
+
+  --green_color_style_light: #dff0e0;
+  --green_color_style: #43a047;
+  --green_color_style_hover: #2a7e2e;
+
+  --red_color_style_light: #ffd7d6;
+  --red_color_style: #e53935;
+  --red_color_style_hover: #be2724;
+
+  --orange_color_style_light: #ffe8c8;
+  --orange_color_style: #fb8c00;
+  --orange_color_style_hover: #d07706;
+
+  --yellow_color_style_light: #fff2cd;
+  --yellow_color_style: #ffca28;
+  --yellow_color_style_hover: #deae1b;
+
+  --pink_color_style_light: #ffdde8;
+  --pink_color_style: #ec407a;
+  --pink_color_style_hover: #b92a5a;
+
+  --violet_color_style_light: #fbe0ff;
+  --violet_color_style: #ab47bc;
+  --violet_color_style_hover: #773183;
+
+  --dark-gray_color_style_light: #ced4e3;
+  --dark-gray_color_style: #38414b;
+  --dark-gray_color_style_hover: #24272e;
+
+  --dark-gray: #38414b;
+  --dark-gray-50: #f6f6f7;
+  --dark-gray-100: #eff0f1;
+  --dark-gray-200: #e1e2e4;
+  --dark-gray-300: #d7d9db;
+  --dark-gray-400: #b0b2b7;
+  --dark-gray-500: #38414b;
+  --dark-gray-600: #38414b;
+  --dark-gray-700: #2b2f39;
+  --dark-gray-800: #22252c;
+  --dark-gray-900: #101215;
+
+  --checkbox-size: 18px;
+  color: #f6f6f7;
+}
+
+html body {
+  background-color: $body_bg_color;
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+}
+
+body:before, body:after, #wrapper:before, #wrapper:after {
+  display: none $imp;
+}
+
+button {
+  outline: none $imp;
+}
+
+.btn, .form-control {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn.btn-default {
+  > i.fa-sort-down {
+    position: relative;
+    top: -2px;
+    margin-left: 5px;
+  }
+}
+
+select.form-control {
+  cursor: pointer;
+}
+
+@for $i from 1 through 12 {
+  .mt-#{$i} {
+    margin-top: 5px * $i
+  }
+  .mb-#{$i} {
+    margin-bottom: 5px * $i
+  }
+  .mr-#{$i} {
+    margin-right: 5px * $i
+  }
+  .ml-#{$i} {
+    margin-left: 5px * $i
+  }
+  .pt-#{$i} {
+    padding-top: 5px * $i
+  }
+  .pb-#{$i} {
+    padding-bottom: 5px * $i
+  }
+  .pr-#{$i} {
+    padding-right: 5px * $i;
+  }
+  .pl-#{$i} {
+    padding-left: 5px * $i
+  }
+}
+
+.hide-control {
+  display: none !important;
+}
+
+.dv-placeholder {
+  display: inline-block;
+  min-height: 1em;
+  vertical-align: middle;
+  cursor: wait;
+  background-color: currentColor;
+  opacity: 0.5;
+}
+
+.dv-placeholder.btn::before {
+  display: inline-block;
+  content: "";
+}
+
+.dv-placeholder-xs {
+  min-height: 0.6em;
+}
+
+.dv-placeholder-sm {
+  min-height: 0.8em;
+}
+
+.dv-placeholder-lg {
+  min-height: 1.2em;
+}
+
+.dv-placeholder-glow .dv-placeholder {
+  -webkit-animation: dv-placeholder-glow 2s ease-in-out infinite;
+  animation: dv-placeholder-glow 2s ease-in-out infinite;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@-webkit-keyframes dv-placeholder-glow {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes dv-placeholder-glow {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.dv-placeholder-wave {
+  -webkit-mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
+  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
+  -webkit-mask-size: 200% 100%;
+  mask-size: 200% 100%;
+  -webkit-animation: dv-placeholder-wave 1s linear infinite;
+  animation: dv-placeholder-wave 1s linear infinite;
+}
+
+@-webkit-keyframes dv-placeholder-wave {
+  100% {
+    -webkit-mask-position: -200% 0%;
+    mask-position: -200% 0%;
+  }
+}
+
+@keyframes dv-placeholder-wave {
+  100% {
+    -webkit-mask-position: -200% 0%;
+    mask-position: -200% 0%;
+  }
+}

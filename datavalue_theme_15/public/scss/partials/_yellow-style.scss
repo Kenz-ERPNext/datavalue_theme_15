@@ -1,0 +1,237 @@
+body.dv-Yellow-style {
+  .side-menu .side-menu-items > ul.dropdown-list > li > a {
+    background: #f8f8f873;
+    border: 1px solid #d1d3d8;
+  }
+
+  .text-primary {
+    color: $yellow_color_style $imp;
+  }
+
+  .side-menu .side-menu-icons > ul > li > a:hover {
+    border-color: $yellow_color_style;
+    color: $yellow_color_style;
+  }
+
+  .side-menu .side-menu-icons > ul > li.active > a {
+    background: $yellow_color_style;
+    color: #ffffff;
+  }
+
+  .side-menu .side-menu-items > ul.dropdown-list > li > a:hover .sub-menu-arrow {
+    color: $yellow_color_style;
+  }
+
+  .side-menu .side-menu-items > ul.dropdown-list > li > a:hover {
+    border-color: $yellow_color_style;
+    color: $yellow_color_style;
+  }
+
+  .side-menu .side-menu-items > ul.dropdown-list > li.active > a {
+    background: $yellow_color_style;
+    border-color: $yellow_color_style;
+    color: #ffffff;
+  }
+
+  .side-menu .side-menu-items > ul.dropdown-list > li.active > a .sub-menu-arrow {
+    color: #ffffff;
+  }
+
+  .side-menu .side-menu-icons.menu-icons-with-label > ul > li.active > a > span {
+    color: $yellow_color_style;
+  }
+
+  .datatable .dt-cell--focus .dt-cell__content {
+    border-color: $yellow_color_style;
+  }
+
+  .widget.shortcut-widget-box:hover svg.icon-xs {
+    stroke: $yellow_color_style $imp;
+  }
+
+  .side-menu .side-menu-items > ul.dropdown-list > li > ul > li > a:hover {
+    color: $yellow_color_style;
+  }
+
+  .side-menu .side-menu-items > ul.dropdown-list > li > ul > li.active > a {
+    color: $yellow_color_style;
+  }
+
+  .btn.btn-primary, div#driver-popover-item .driver-popover-footer button.btn-primary, div#driver-popover-item .driver-popover-footer button.driver-next-btn {
+    background-color: $yellow_color_style;
+    --icon-stroke: currentColor;
+    --icon-fill-bg: $yellow_color_style;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled):active, div#driver-popover-item .driver-popover-footer button.driver-next-btn:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, div#driver-popover-item .driver-popover-footer button.driver-next-btn:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle, div#driver-popover-item .driver-popover-footer .show > button.dropdown-toggle.driver-next-btn {
+    background-color: $yellow_color_style_hover;
+    border-color: $yellow_color_style_hover;
+  }
+
+  input[type=checkbox]:checked {
+    background-color: $yellow_color_style;
+    background-image: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 4.00001L2.66667 5.80001L7 1.20001' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-size: 57%, 100%;
+  }
+
+  .form-control:focus {
+    border-color: $yellow_color_style $imp;
+  }
+
+  .list-sidebar .sidebar-action {
+    color: $yellow_color_style;
+  }
+
+  .btn-primary-light {
+    color: #1f272e;
+    background-color: $yellow_color_style_light;
+    border-color: $yellow_color_style_light;
+    color: $yellow_color_style_hover;
+  }
+
+  .notifications-list .notification-item-tabs .notifications-category.active {
+    border-bottom: 1px solid $yellow_color_style;
+  }
+
+  .form-tabs-list .form-tabs .nav-item .nav-link.active {
+    border-bottom: 1px solid $yellow_color_style;
+  }
+
+  button.btn.btn-default.btn-sm.btn-paging.btn-info {
+    background: $yellow_color_style !important;
+    border-color: $yellow_color_style !important;
+  }
+
+  .dv-navbar .dv-nav-right > ul > li.dropdown-user > a .dv-user-info span.user-name {
+    color: $yellow_color_style;
+  }
+
+  .dv-navbar .dv-nav-left .btn-open-modules {
+    color: $yellow_color_style_hover;
+  }
+
+  .dv-navbar .dv-nav-left .btn-open-modules:hover {
+    color: $yellow_color_style;
+  }
+
+  .ql-snow.ql-toolbar button:hover, .ql-snow .ql-toolbar button:hover, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.ql-active, .ql-snow .ql-toolbar button.ql-active, .ql-snow.ql-toolbar .ql-picker-label:hover, .ql-snow .ql-toolbar .ql-picker-label:hover, .ql-snow.ql-toolbar .ql-picker-label.ql-active, .ql-snow .ql-toolbar .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker-item:hover, .ql-snow .ql-toolbar .ql-picker-item:hover, .ql-snow.ql-toolbar .ql-picker-item.ql-selected, .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+    color: $yellow_color_style;
+  }
+
+  .dv-navbar .dv-nav-right > ul > li.dropdown-user .dropdown-menu .dropdown-item:hover, .dv-navbar .dv-nav-right > ul > li.dropdown-user .dropdown-menu .dropdown-item:focus {
+    color: $yellow_color_style $imp;
+    background-color: #eeeeee;
+  }
+
+  .dv-navbar .dv-nav-right > ul > li.dropdown-user .dropdown-menu .dropdown-item.active, .dv-navbar .dv-nav-right > ul > li.dropdown-user .dropdown-menu .dropdown-item:active {
+    color: #ffffff !important;
+    background-color: $yellow_color_style;
+  }
+
+  .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item:hover, .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item:focus {
+    color: $yellow_color_style $imp;
+    background-color: #eeeeee;
+  }
+
+  .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item.active, .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item:active {
+    color: #ffffff !important;
+    background-color: $yellow_color_style;
+  }
+
+  .dv-navbar .dv-nav-right > ul > li.dropdown-full-screen > button:hover, .dv-navbar .dv-nav-right > ul > li.dropdown-files > button:hover, .dv-navbar .dv-nav-right > ul > li.dropdown-search > button:hover {
+    color: $yellow_color_style !important;
+  }
+
+  .dv-navbar .dv-nav-right > ul > li.dv-dropdown-notifications > a:hover {
+    color: $yellow_color_style !important;
+  }
+
+  .side-menu .side-menu-icons.menu-icons-with-label > ul > li > a:hover > div {
+    border-color: $yellow_color_style $imp;
+    color: $yellow_color_style $imp;
+  }
+
+  .side-menu .side-menu-icons.menu-icons-with-label > ul > li.active > a > div {
+    background: $yellow_color_style $imp;
+    color: #ffffff $imp;
+  }
+
+  mark, .mark {
+    padding: 0;
+    background-color: $yellow_color_style;
+    color: #ffffff;
+  }
+
+  .widget.shortcut-widget-box:hover .widget-title {
+    color: $yellow_color_style $imp;
+  }
+
+  .side-menu .modules-menu .modules-menu-list a {
+    color: #666666;
+  }
+
+  .side-menu .modules-menu .modules-menu-list a:hover {
+    border-color: #e6e6e6;
+    color: $yellow_color_style;
+  }
+
+  .side-menu .modules-menu .modules-menu-list a.active {
+    color: $yellow_color_style;
+  }
+
+  .btn-toggle-main-menu {
+    background: $yellow_color_style;
+
+    &:hover {
+      background: $yellow_color_style_hover;
+    }
+  }
+
+  &.dv-dark-style {
+    .btn-primary-light {
+      color: #ffffff;
+      background-color: $yellow_color_style;
+      border-color: $yellow_color_style;
+    }
+
+    .side-menu .side-menu-icons.menu-icons-with-label > ul > li > a > div {
+      color: $yellow_color_style_light;
+    }
+
+    .form-tabs-list .form-tabs .nav-item .nav-link.active {
+      color: $yellow_color_style;
+    }
+
+    .side-menu .modules-menu .modules-menu-list a {
+      color: $yellow_color_style_light;
+    }
+
+    .side-menu .modules-menu .modules-menu-list a:hover {
+      border-color: $yellow_color_style;
+      color: $yellow_color_style;
+    }
+
+    .side-menu .modules-menu .modules-menu-list a.active {
+      color: $yellow_color_style;
+    }
+
+    .side-menu .side-menu-items > ul.dropdown-list > li > a:hover {
+      border-color: $yellow_color_style;
+      color: $yellow_color_style;
+    }
+
+    .side-menu .side-menu-items > ul.dropdown-list > li.active > a {
+      background: $yellow_color_style;
+      border-color: $yellow_color_style;
+      color: #ffffff;
+    }
+
+    .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item:hover, .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item:focus {
+      background-color: #2b3138;
+    }
+
+    .side-menu .side-menu-icons > ul > li.active > a {
+      color: #ffffff;
+    }
+  }
+}

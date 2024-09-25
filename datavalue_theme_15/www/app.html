@@ -1,0 +1,127 @@
+<!--
+Data Value Theme
+By: Abdo Hamoud
+www.abdo-host.com
+-->
+<!DOCTYPE html>
+<html data-theme="{{dark_theme}}" data-theme-mode="{{dark_theme}}" data-dv-theme="{{dark_theme}}" data-theme-version="{{app_version}}" dir={{layout_direction}} lang="{{lang}}">
+	<head>
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#007BFF">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#007BFF">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#007BFF">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="white">
+		<meta name="mobile-web-app-capable" content="yes">
+		<title>Data Value</title>
+		<link rel="shortcut icon" href="{{ theme_settings.favicon or "/assets/datavalue_theme_15/images/datavlue-new-icon-xs.png" }}" type="image/x-icon">
+		<link rel="icon" href="{{ theme_settings.favicon or "/assets/datavalue_theme_15/images/datavlue-new-icon-xs.png" }}" type="image/x-icon">
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family={{theme_settings.font_family or 'Cairo'}}:300,400,500,600,700,800,900">
+		{% for include in include_css -%}
+		{{ include_style(include) }}
+		{%- endfor -%}
+		<style>
+			html body {
+				font-family: "{{theme_settings.font_family or 'Cairo'}}";
+                --brand-color: var(--{{theme_color_name}}_color_style);
+                --primary: var(--{{theme_color_name}}_color_style);
+                --primary-hover: var(--{{theme_color_name}}_color_style_hover);
+                --primary-color: var(--{{theme_color_name}}_color_style);
+                --btn-primary: var(--{{theme_color_name}}_color_style);
+                --border-primary: var(--{{theme_color_name}}_color_style);
+                --invert-neutral: var(--{{theme_color_name}}_color_style_hover);
+                {% if dark_theme !='dark' %}
+                    --table-border-color: var(--{{theme_color_name}}-300);
+                    --border-color: #dddddd;
+                    --subtle-fg: var(--{{theme_color_name}}-100);
+                    --awesomplete-hover-bg: var(--{{theme_color_name}}-100);
+                {% endif %}
+                {% if theme_color_name !='blue' %}
+                    --blue: var(--{{theme_color_name}});
+                    --blue-50: var(--{{theme_color_name}}-50);
+                    --blue-100: var(--{{theme_color_name}}-100);
+                    --blue-200: var(--{{theme_color_name}}-200);
+                    --blue-300: var(--{{theme_color_name}}-300);
+                    --blue-400: var(--{{theme_color_name}}-400);
+                    --blue-500: var(--{{theme_color_name}}-500);
+                    --blue-600: var(--{{theme_color_name}}-600);
+                    --blue-700: var(--{{theme_color_name}}-700);
+                    --blue-800: var(--{{theme_color_name}}-800);
+                    --blue-900: var(--{{theme_color_name}}-900);
+                {% endif %}
+                --date-active-bg: var(--{{theme_color_name}}-600);
+                --checkbox-gradient: linear-gradient(180deg, var(--{{theme_color_name}}_color_style) -124.51%, var(--{{theme_color_name}}_color_style_hover) 100%);
+			}
+		</style>
+	</head>
+	<body class="full-width dv-theme-{{dark_theme}} {{theme_color_on_navbar}} {{apply_on_menu}} {{apply_on_dashboard}} {{apply_on_workspace}} dv-{{theme_color}}-style {% if(theme_settings.dark_view=='1') %}dv-dark-style{% endif %}"
+		  data-theme-color="{{theme_color}}"
+		  data-theme-colorname="{{theme_color_name}}"
+		  data-close-sub-menu="{{theme_settings.always_close_sub_menu}}"
+		  data-menu-opening-type="{{theme_settings.menu_opening_type}}"
+		  data-hide-language-icon="{{theme_settings.hide_language_icon or 0}}"
+		  data-show-help-icon="{{theme_settings.show_help_icon or 0}}"
+		  data-font-family="{{theme_settings.font_family or 'Cairo'}}">
+        <div class="centered splash">
+            <img style="max-width:100px;max-height:100px;" src="{{ theme_settings.loading_image or "/assets/datavalue_theme_15/images/logo-v.png" }}" />
+        </div>
+        <div class="dv-app-theme main-section">
+            <header id="app-header"></header>
+			<div class="dv-content-overlay"></div>
+            <div class="dv-app-content" id="body"></div>
+            <footer id="app-footer"></footer>
+			{{ frappe.render_template('templates/side-menu.html', {}) }}
+        </div>
+        <div id="all-symbols" style="display:none"></div>
+        <div id="build-events-overlay"></div>
+
+		<script type="text/javascript">
+            const  None =''
+			window._version_number = "{{ build_version }}";
+			// browser support
+			window.app = true;
+			window.dev_server = {{ dev_server }};
+
+			if (!window.frappe) window.frappe = {};
+			if (!window.datavalue) window.datavalue = {};
+
+			frappe.boot = JSON.parse({{ boot }});
+			frappe.theme_settings = {{ theme_settings }};
+			frappe._messages = frappe.boot["__messages"];
+			frappe.csrf_token = "{{ csrf_token }}";
+			datavalue.frappe = frappe;
+			datavalue.version = "{{app_version}}";
+
+		</script>
+		<script type="text/javascript">
+
+			{%- for path in include_icons -%}
+			fetch(`/assets/{{ path }}?v=${window._version_number}`, { credentials: "same-origin" })
+					.then((r) => r.text())
+					.then((svg) => {
+						let svg_container = document.getElementById("all-symbols");
+						svg_container.insertAdjacentHTML("beforeend", svg);
+					});
+			{%- endfor -%}
+
+		</script>
+		{% for include in include_js %}
+		{{ include_script(include) }}
+		{% endfor %}
+		<script type="text/javascript" src="/assets/datavalue_theme_15/js/datavalue_theme.js?ver={{ build_version }}"></script>
+
+		{% include "templates/includes/app_analytics/google_analytics.html" %}
+
+		{% for sound in (sounds or []) %}
+		<audio preload="auto" id="sound-{{ sound.name }}" volume={{ sound.volume or 1 }}>
+			<source src="{{ sound.src }}"></source>
+		</audio>
+		{% endfor %}
+	</body>
+</html>

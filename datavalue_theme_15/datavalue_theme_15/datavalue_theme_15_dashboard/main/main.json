@@ -1,0 +1,42 @@
+{
+ "cards": [
+  {
+   "card": "Active Customers"
+  },
+  {
+   "card": "Sales Orders to Bill"
+  },
+  {
+   "card": "Total Active Items"
+  },
+  {
+   "card": "Active Suppliers"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Asset Value Analytics",
+   "width": "Half"
+  },
+  {
+   "chart": "Sales Order Analysis",
+   "width": "Half"
+  },
+  {
+   "chart": "Accounts Receivable Ageing",
+   "width": "Full"
+  }
+ ],
+ "creation": "2023-09-16 21:19:00.445075",
+ "dashboard_name": "Main",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2023-09-29 22:41:33.878389",
+ "modified_by": "Administrator",
+ "module": "Datavalue Theme 15",
+ "name": "Main",
+ "owner": "Administrator"
+}
