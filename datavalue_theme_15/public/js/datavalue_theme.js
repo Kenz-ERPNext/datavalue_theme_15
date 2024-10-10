@@ -184,6 +184,14 @@
                 user: {},
             },
             methods: {
+                logo_link() {
+                    let default_workspace = $('body').data('default-workspace');
+                    if (default_workspace) {
+                        return '/app/' + (default_workspace.replace(/ /g, "-")).toLowerCase();
+                    } else {
+                        return '/app';
+                    }
+                },
                 get_company_logo: function () {
                     const $this = this;
                     let logo = 'datavalue-new-logo.svg';

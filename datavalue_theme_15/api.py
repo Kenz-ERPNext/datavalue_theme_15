@@ -92,6 +92,7 @@ def get_theme_settings():
         'background_type': settings_list['background_type'] if ("background_type" in settings_list) else '',
         'full_page_background': settings_list['full_page_background'] if ("full_page_background" in settings_list) else '',
         'transparent_background': settings_list['transparent_background'] if ("transparent_background" in settings_list) else '',
+        'default_workspace': settings_list['default_workspace'] if ("default_workspace" in settings_list) else '',
         'slideshow_photos': slideshow_photos,
         'dark_view': settings_list['dark_view'] if ("dark_view" in settings_list) else '',
         'theme_color': settings_list['theme_color'] if ("theme_color" in settings_list) else '',
