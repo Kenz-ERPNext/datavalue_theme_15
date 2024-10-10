@@ -14,6 +14,9 @@
   .dv-navbar .dv-nav-right > ul > li.dropdown-user > a .dv-user-info span.user-name {
     font-size: 14px;
   }
+  #navbar-breadcrumbs {
+    display: none $imp;
+  }
 }
 
 @media (max-width: 1028px) {

@@ -36,6 +36,7 @@
   "show_help_icon",
   "hide_language_icon",
   "egypt_language_icon",
+  "default_workspace",
   "login_page_section",
   "login_page_logo",
   "enable_background",
@@ -234,11 +235,17 @@
    "fieldname": "egypt_language_icon",
    "fieldtype": "Check",
    "label": "Egypt Language Icon"
+  },
+  {
+   "fieldname": "default_workspace",
+   "fieldtype": "Link",
+   "label": "Default Workspace",
+   "options": "Workspace"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2024-09-18 13:22:25.559104",
+ "modified": "2024-09-24 04:02:28.141087",
  "modified_by": "Administrator",
  "module": "Datavalue Theme 15",
  "name": "Theme Settings",

@@ -880,17 +880,13 @@ button.btn.btn-default {
 
 .form-layout, .print-preview-sidebar {
   .form-control {
-    height: 28px !important;
+    height: 28px;
     padding: 2px 8px;
   }
 
   .frappe-control[data-fieldtype=Select] .control-input .select-icon, .frappe-control[data-fieldtype=Select].form-group .select-icon {
     top: 2px;
     right: 6px;
-  }
-
-  textarea.form-control {
-    height: auto !important;
   }
 }
 
@@ -1029,6 +1025,31 @@ button.btn.btn-default {
 }
 
 .frappe-control {
+  &[data-fieldtype="_Currency"] {
+    .control-input {
+      position: relative;
+
+      > input {
+        padding-left: 28px;
+      }
+
+      &:before {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 8px;
+        top: 2px;
+        z-index: 1;
+        display: block;
+        font-size: 16px;
+        font-weight: 300;
+        font-family: "Font Awesome 5 Pro", serif;
+        color: #818d95;
+        content: "\f2e8";
+      }
+    }
+  }
+
   &[data-fieldtype="Date"], &[data-fieldtype="Time"] {
     .control-input {
       position: relative;
@@ -1105,20 +1126,48 @@ button.btn.btn-default {
     }
   }
 
-  a.btn-open.no-decoration {
+  a.btn-open {
     background: var(--primary);
     height: 18px;
     line-height: 18px;
     display: inline-block;
-    padding: 0px 8px;
+    padding: 0 8px;
     font-size: 12px;
     color: #fff;
     border-radius: 4px;
     position: relative;
-    top: 0px;
+    top: 0;
+    transition: all 0.2s ease-in-out;
 
     .icon {
       stroke: #ffffff
+    }
+
+    &:hover {
+      background: var(--blue-700);
+    }
+  }
+
+  a.btn-clear {
+    background: var(--red-200);
+    height: 18px;
+    line-height: 18px;
+    display: inline-block;
+    padding: 0 8px;
+    font-size: 12px;
+    color: var(--red-600);
+    border-radius: 4px;
+    position: relative;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+
+    .icon {
+      stroke: var(--danger)
+    }
+
+    &:hover {
+      background: var(--red-300);
+      color: var(--red-700);
     }
   }
 
@@ -1344,4 +1393,14 @@ button.btn.btn-default {
 
 .frappe-control[data-fieldtype=Icon] .like-disabled-input .selected-icon {
   top: 0;
+}
+
+#navbar-breadcrumbs {
+  li.disabled {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    vertical-align: middle;
+  }
 }
