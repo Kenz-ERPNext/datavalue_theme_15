@@ -49,6 +49,16 @@ def get_module_name_from_doctype(doc_name, current_module=""):
 
 
 @frappe.whitelist()
+def get_doctype_parent_module(doctype=''):
+    # select * from `tabWorkspace Link` where type='Link' and link_to='Employee' order by idx DESC limit 1;
+    resutl = frappe.db.sql(
+        """select * from `tabWorkspace Link` where type='Link' and link_to='{doctype}' order by idx DESC limit 1""".format(doctype=doctype),
+        as_dict=True)
+    if(resutl and resutl[0]):
+        return resutl[0].parent
+
+
+@frappe.whitelist()
 def change_language(language):
     frappe.db.set_value("User", frappe.session.user, "language", language)
     clear()

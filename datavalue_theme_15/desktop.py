@@ -397,13 +397,13 @@ def get_desktop_page(page):
 		workspace = Workspace(loads(page))
 		workspace.build_workspace()
 		return {
-			"charts": workspace.charts,
+			# "charts": workspace.charts,
 			"shortcuts": workspace.shortcuts,
 			"cards": workspace.cards,
-			"onboardings": workspace.onboardings,
-			"quick_lists": workspace.quick_lists,
-			"number_cards": workspace.number_cards,
-			"custom_blocks": workspace.custom_blocks,
+			# "onboardings": workspace.onboardings,
+			# "quick_lists": workspace.quick_lists,
+			# "number_cards": workspace.number_cards,
+			# "custom_blocks": workspace.custom_blocks,
 		}
 	except DoesNotExistError:
 		frappe.log_error("Workspace Missing")
