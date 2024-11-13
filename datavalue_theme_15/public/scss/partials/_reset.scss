@@ -50,9 +50,9 @@ $dark_gray_color_style_hover: #24272e;
   --orange_color_style: #fb8c00;
   --orange_color_style_hover: #d07706;
 
-  --yellow_color_style_light: #fff2cd;
-  --yellow_color_style: #ffca28;
-  --yellow_color_style_hover: #deae1b;
+  --yellow_color_style_light: #f3eadc;
+  --yellow_color_style: #c6984c;
+  --yellow_color_style_hover: #a17735;
 
   --pink_color_style_light: #ffdde8;
   --pink_color_style: #ec407a;
@@ -82,9 +82,21 @@ $dark_gray_color_style_hover: #24272e;
   color: #f6f6f7;
 }
 
+:root {
+  --yellow-50: #fff7eb;
+  --yellow-100: #f3eadc;
+  --yellow-200: #eadac1;
+  --yellow-300: #e3cca7;
+  --yellow-400: #dbbd8f;
+  --yellow-500: #cca362;
+  --yellow-600: #c6984c;
+  --yellow-700: #ab6e05;
+  --yellow-800: #8c5600;
+  --yellow-900: #733f12;
+}
+
 html body {
   background-color: $body_bg_color;
-
 }
 
 input:-webkit-autofill,

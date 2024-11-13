@@ -20,6 +20,7 @@ no_cache = True
 
 def get_context(context):
     redirect_to = frappe.local.request.args.get("redirect-to")
+    hooks = frappe.get_hooks()
 
     if frappe.session.user != "Guest":
         if not redirect_to:
@@ -36,6 +37,7 @@ def get_context(context):
     context.no_header = True
     context.for_test = 'login.html'
     context["title"] = "Login"
+    context["app_version"] = get_first_item(hooks.version)
     context["provider_logins"] = []
     context["disable_signup"] = frappe.utils.cint(frappe.db.get_single_value("Website Settings", "disable_signup"))
     context["logo"] = (frappe.db.get_single_value('Theme Settings', 'login_page_logo') or '/assets/datavalue_theme_15/images/datavalue-new-logo.svg')
@@ -115,3 +117,9 @@ def login_via_token(login_token):
     frappe.local.login_manager = LoginManager()
 
     redirect_post_login(desk_user=frappe.db.get_value("User", frappe.session.user, "user_type") == "System User")
+
+def get_first_item(array):
+    if isinstance(array, list) and len(array) > 0:
+        return array[0]
+    else:
+        return ''

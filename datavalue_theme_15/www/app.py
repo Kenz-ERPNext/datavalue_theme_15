@@ -84,6 +84,7 @@ def get_context(context):
             "google_analytics_anonymize_ip": frappe.conf.get("google_analytics_anonymize_ip"),
             "mixpanel_id": frappe.conf.get("mixpanel_id"),
             "theme_settings": theme_settings_list,
+            "default_workspace": frappe.db.get_value("User", frappe.session.user, 'default_workspace'),
             "theme_color": (theme_color),
             "theme_color_name": (theme_color).replace(' ', '-').lower(),
             "theme_color_on_navbar": 'layout-navbar-color-style' if ('apply_on_navbar' in theme_settings_list and theme_settings_list['apply_on_navbar'] == '1') else '',
@@ -102,6 +103,7 @@ def get_first_item(array):
         return array[0]
     else:
         return ''
+
 
 @frappe.whitelist()
 def get_desk_assets(build_version):
