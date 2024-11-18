@@ -1399,6 +1399,12 @@ button.btn.btn-default {
   top: 0;
 }
 
+.dv-custom-icon {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
 #navbar-breadcrumbs {
   li.disabled {
     white-space: nowrap;
