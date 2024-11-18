@@ -284,7 +284,7 @@ def update_menu_modules(modules):
             else:
                 frappe.db.set_value("Workspace", module["name"], {
                     "custom_menu_title": module['title'],
-                    "custom_default_dashboard": module['custom_default_dashboard'],
+                    "custom_default_dashboard":  module["custom_default_dashboard"] if module["custom_default_dashboard"] else '',
                     "icon": module["icon"],
                     "sequence_id": int(module["sequence_id"])
                 })
@@ -292,12 +292,13 @@ def update_menu_modules(modules):
             if (module["_is_new"] == 'true'):
                 workspace = frappe.new_doc("Workspace")
                 workspace.title = module["title"]
-                workspace.custom_menu_title = module["custom_menu_title"]
-                workspace.custom_default_dashboard = module["custom_default_dashboard"]
+                workspace.custom_menu_title = module["title"]
+                workspace.custom_default_dashboard = module["custom_default_dashboard"] if module["custom_default_dashboard"] else ''
                 workspace.icon = module["icon"]
                 workspace.content = module["content"]
                 workspace.label = module["label"]
                 workspace.sequence_id = int(module["sequence_id"])
+                workspace.indicator_color = ""
                 workspace.for_user = ""
                 workspace.public = 1
                 workspace.save()
