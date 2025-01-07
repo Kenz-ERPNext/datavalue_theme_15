@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:map_name",
+ "creation": "2024-12-27 09:08:36.309429",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "map_name",
+  "doctype_name",
+  "doctype_field",
+  "title_field",
+  "column_break_cpiz",
+  "map_title",
+  "description",
+  "mark_icon"
+ ],
+ "fields": [
+  {
+   "fieldname": "map_name",
+   "fieldtype": "Data",
+   "label": "Map Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Doctype must have Geolocation field type",
+   "fieldname": "doctype_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctype Name",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "doctype_field",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Doctype Field",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cpiz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "map_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Map Title"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "mark_icon",
+   "fieldtype": "Attach Image",
+   "label": "Mark Icon"
+  },
+  {
+   "fieldname": "title_field",
+   "fieldtype": "Select",
+   "label": "Title Field"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-28 07:58:12.122047",
+ "modified_by": "Administrator",
+ "module": "Datavalue Theme 15",
+ "name": "Dashboard Map",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

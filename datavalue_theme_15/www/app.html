@@ -19,7 +19,7 @@ www.abdo-host.com
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="white">
 		<meta name="mobile-web-app-capable" content="yes">
-		<title>OBG</title>
+		<title>Hydrotech</title>
 		<link rel="shortcut icon" href="{{ theme_settings.favicon or "/assets/datavalue_theme_15/images/datavlue-new-icon-xs.png" }}" type="image/x-icon">
 		<link rel="icon" href="{{ theme_settings.favicon or "/assets/datavalue_theme_15/images/datavlue-new-icon-xs.png" }}" type="image/x-icon">
 		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family={{theme_settings.font_family or 'Cairo'}}:300,400,500,600,700,800,900">
@@ -64,7 +64,6 @@ www.abdo-host.com
 		  data-theme-color="{{theme_color}}"
 		  data-theme-colorname="{{theme_color_name}}"
 		  data-close-sub-menu="{{theme_settings.always_close_sub_menu}}"
-		  data-menu-opening-type="{{theme_settings.menu_opening_type}}"
 		  data-hide-language-icon="{{theme_settings.hide_language_icon or 0}}"
 		  data-show-help-icon="{{theme_settings.show_help_icon or 0}}"
 		  data-default-workspace="{{default_workspace or theme_settings.default_workspace or ''}}"
@@ -76,7 +75,6 @@ www.abdo-host.com
             <header id="app-header"></header>
 			<div class="dv-content-overlay"></div>
             <div class="dv-app-content" id="body"></div>
-            <footer id="app-footer"></footer>
 			{{ frappe.render_template('templates/side-menu.html', {}) }}
         </div>
         <div id="all-symbols" style="display:none"></div>

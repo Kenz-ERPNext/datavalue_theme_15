@@ -13,12 +13,18 @@
  "engine": "InnoDB",
  "field_order": [
   "theme_layout_tab",
+  "layout_section",
   "dark_view",
   "theme_logo",
+  "column_break_cihp",
   "favicon",
+  "column_break_jsrt",
   "loading_image",
+  "section_break_xsnf",
+  "hide_layout_pages",
   "apply_color_and_background_section",
   "theme_color",
+  "column_break_kuzx",
   "apply_on_navbar",
   "apply_on_menu",
   "apply_on_dashboard",
@@ -31,7 +37,6 @@
   "show_icon_label",
   "hide_icon_tooltip",
   "always_close_sub_menu",
-  "menu_opening_type",
   "layout_tab",
   "show_help_icon",
   "hide_language_icon",
@@ -137,13 +142,6 @@
    "label": "Always Close Sub Menu"
   },
   {
-   "default": "Workspace",
-   "fieldname": "menu_opening_type",
-   "fieldtype": "Select",
-   "label": "Menu Opening Type",
-   "options": "Workspace\nDashboard"
-  },
-  {
    "default": "0",
    "fieldname": "hide_language_icon",
    "fieldtype": "Check",
@@ -241,11 +239,38 @@
    "fieldtype": "Link",
    "label": "Default Workspace",
    "options": "Workspace"
+  },
+  {
+   "fieldname": "column_break_cihp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jsrt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kuzx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "layout_section",
+   "fieldtype": "Section Break",
+   "label": "Layout"
+  },
+  {
+   "fieldname": "section_break_xsnf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "hide_layout_pages",
+   "fieldtype": "Table MultiSelect",
+   "label": "Hide Layout Pages",
+   "options": "Theme Settings Hide Layout Pages"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2024-09-24 04:02:28.141087",
+ "modified": "2024-12-30 07:18:38.352516",
  "modified_by": "Administrator",
  "module": "Datavalue Theme 15",
  "name": "Theme Settings",

@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "RC..#####",
+ "creation": "2025-01-01 06:06:45.883165",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "number_card_name",
+  "report_name",
+  "column_break_efmy",
+  "label"
+ ],
+ "fields": [
+  {
+   "fieldname": "number_card_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Number Card Name",
+   "options": "Number Card",
+   "reqd": 1
+  },
+  {
+   "fieldname": "report_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Report Name",
+   "options": "Report",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_efmy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "Label"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 06:10:47.141974",
+ "modified_by": "Administrator",
+ "module": "Datavalue Theme 15",
+ "name": "Report Number Card",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Report Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -436,6 +436,7 @@ def get_workspace_sidebar_items():
 		"name",
 		"title",
 		"custom_default_dashboard",
+		"custom_open_dashboard",
 		"custom_menu_title",
 		"for_user",
 		"parent_page",
