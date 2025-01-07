@@ -1,0 +1,14 @@
+body.hide-layout-page {
+  .dv-navbar, .side-menu, .btn-toggle-main-menu {
+    display: none;
+  }
+
+  .dv-app-theme .dv-app-content {
+    padding: 20px 20px 0;
+    margin-left: 0;
+  }
+
+  .page-container {
+    min-height: calc(100vh - 100px);
+  }
+}

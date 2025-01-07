@@ -101,6 +101,18 @@
   border-radius: 5px;
 }
 
+.btn.btn-secondary, div#driver-popover-item .driver-popover-footer button.btn-secondary, div#driver-popover-item .driver-popover-footer button.driver-prev-btn {
+  background-color: var(--blue-200) !important;
+  border: 1px solid var(--blue-300) !important;
+  color: var(--blue-800) !important;
+
+  &:hover, &:active {
+    background-color: var(--blue-300) !important;
+    border-color: var(--blue-400) !important;
+    color: var(--blue-900) !important;
+  }
+}
+
 .form-control {
   background: #ffffff;
   border: 1px solid #bbb;
@@ -232,7 +244,7 @@ button.btn.btn-default.btn-primary {
     background: #fff;
     border: 0;
     box-shadow: -2px 0px 5px -2px #00000030;
-    margin: 0px 15px 0px 0px;
+    margin: 0 15px 0 0;
     height: 30px;
     width: 20px;
     display: none;
@@ -241,11 +253,11 @@ button.btn.btn-default.btn-primary {
     font-size: 16px;
     padding: 0;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 6px;
+    top: 1px;
     z-index: 50;
     color: #666666;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0 0 5px;
     transition: all 0.2s ease-in;
 
     &.sidebar-shown {

@@ -1,5 +1,7 @@
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
+from dataclasses import fields
+
 no_cache = 1
 
 import json
@@ -47,6 +49,7 @@ def get_context(context):
     theme_settings = frappe.db.sql(""" SELECT * FROM tabSingles WHERE doctype = 'Theme Settings'; """, as_dict=True)
     for theme_setting in theme_settings:
         theme_settings_list[theme_setting['field']] = theme_setting['value']
+        theme_settings_list['hide_layout_pages'] = frappe.db.get_all('Theme Settings Hide Layout Pages', filters={'parent': 'Theme Settings'}, fields=["name", "page_name"], pluck="page_name")
 
     # TODO: Find better fix
     boot_json = CLOSING_SCRIPT_TAG_PATTERN.sub("", boot_json)

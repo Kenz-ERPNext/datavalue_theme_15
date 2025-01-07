@@ -49,12 +49,18 @@ def get_module_name_from_doctype(doc_name, current_module=""):
 
 
 @frappe.whitelist()
+def get_permitted_maps(dashboard_name):
+    dashboard = frappe.get_doc("Dashboard", dashboard_name)
+    return [map for map in dashboard.custom_maps if frappe.has_permission("Dashboard Map", doc=map.map)]
+
+
+@frappe.whitelist()
 def get_doctype_parent_module(doctype=''):
     # select * from `tabWorkspace Link` where type='Link' and link_to='Employee' order by idx DESC limit 1;
     resutl = frappe.db.sql(
         """select * from `tabWorkspace Link` where type='Link' and link_to='{doctype}' order by idx DESC limit 1""".format(doctype=doctype),
         as_dict=True)
-    if(resutl and resutl[0]):
+    if (resutl and resutl[0]):
         return resutl[0].parent
 
 
@@ -110,7 +116,6 @@ def get_theme_settings():
         'show_icon_label': settings_list['show_icon_label'] if ("show_icon_label" in settings_list) else '',
         'hide_icon_tooltip': settings_list['hide_icon_tooltip'] if ("hide_icon_tooltip" in settings_list) else '',
         'always_close_sub_menu': settings_list['always_close_sub_menu'] if ("always_close_sub_menu" in settings_list) else '',
-        'menu_opening_type': settings_list['menu_opening_type'] if ("menu_opening_type" in settings_list) else '',
         'loading_image': settings_list['loading_image'] if ("loading_image" in settings_list) else ''
     }
 
@@ -284,7 +289,8 @@ def update_menu_modules(modules):
             else:
                 frappe.db.set_value("Workspace", module["name"], {
                     "custom_menu_title": module['title'],
-                    "custom_default_dashboard":  module["custom_default_dashboard"] if module["custom_default_dashboard"] else '',
+                    "custom_default_dashboard": module["custom_default_dashboard"] if module["custom_default_dashboard"] else '',
+                    "custom_open_dashboard": module["custom_open_dashboard"] if module["custom_open_dashboard"] else 0,
                     "icon": module["icon"],
                     "sequence_id": int(module["sequence_id"])
                 })
@@ -294,6 +300,7 @@ def update_menu_modules(modules):
                 workspace.title = module["title"]
                 workspace.custom_menu_title = module["title"]
                 workspace.custom_default_dashboard = module["custom_default_dashboard"] if module["custom_default_dashboard"] else ''
+                workspace.custom_open_dashboard = module["custom_open_dashboard"] if module["custom_open_dashboard"] else 0
                 workspace.icon = module["icon"]
                 workspace.content = module["content"]
                 workspace.label = module["label"]
@@ -304,6 +311,17 @@ def update_menu_modules(modules):
                 workspace.save()
 
     return True
+
+
+@frappe.whitelist()
+def get_form_cards(doctype):
+    cards_list = []
+    cards = frappe.db.get_all("Form Number Card", filters={"doctype_form": doctype}, fields=["name", "idx", "number_card_name", "doctype_form", "label"], order_by="idx asc")
+    if cards:
+        for card in cards:
+            card.card_data = frappe.db.get_value("Number Card", {"name": card.number_card_name}, ["*"], as_dict=True)
+            cards_list.append(card)
+    return cards_list
 
 
 @frappe.whitelist()
@@ -326,6 +344,46 @@ def update_form_card(cards):
                 frappe.delete_doc("Form Number Card", card["name"], force=True)
             else:
                 frappe.db.set_value("Form Number Card", card["name"], {
+                    "idx": card["idx"],
+                    "number_card_name": card['number_card_name'],
+                    "label": card["label"]
+                })
+
+    return True
+
+
+@frappe.whitelist()
+def get_report_cards(report_name):
+    cards_list = []
+    if(report_name):
+        cards = frappe.db.get_all("Report Number Card", filters={"report_name": report_name}, fields=["name", "idx", "number_card_name", "report_name", "label"], order_by="idx asc")
+        if cards:
+            for card in cards:
+                card.card_data = frappe.db.get_value("Number Card", {"name": card.number_card_name}, ["*"], as_dict=True)
+                cards_list.append(card)
+    return cards_list
+
+
+@frappe.whitelist()
+def add_report_card(number_card_name, report_name, label=''):
+    new_doc = frappe.new_doc("Report Number Card")
+    new_doc.number_card_name = number_card_name
+    new_doc.report_name = report_name
+    new_doc.label = label
+    new_doc.save()
+    frappe.db.commit()
+    return new_doc
+
+
+@frappe.whitelist()
+def update_report_card(cards):
+    cards_list = json.loads(cards)
+    for card in cards_list:
+        if frappe.db.exists("Report Number Card", card["name"]):
+            if (card["_is_deleted"] == 'true'):
+                frappe.delete_doc("Report Number Card", card["name"], force=True)
+            else:
+                frappe.db.set_value("Report Number Card", card["name"], {
                     "idx": card["idx"],
                     "number_card_name": card['number_card_name'],
                     "label": card["label"]
