@@ -919,6 +919,25 @@ button.btn.btn-default {
       font-size: 14px;
       font-weight: 700 !important;
     }
+
+    .btn-default[data-fieldtype="Attach"] {
+      height: 24px !important;
+      padding: 1px 8px;
+      margin: 2px;
+
+      &:before {
+        display: inline-block;
+        margin-right: 2px;
+        font-family: "Font Awesome 5 Pro", serif;
+        font-weight: 400;
+        font-size: 12px;
+        content: "";
+      }
+    }
+  }
+
+  .frappe-control[data-fieldtype=Attach] .attached-file, .frappe-control[data-fieldtype="Attach Image"] .attached-file {
+    padding: 3px 10px;
   }
 }
 

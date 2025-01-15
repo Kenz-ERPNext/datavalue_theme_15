@@ -431,6 +431,21 @@ html[data-theme="dark"] {
       color: #000;
     }
   }
+
+  .widget.number-widget-box {
+    background-color: #16181b;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+  }
+
+  .report-summary {
+    background-color: var(--bg-color);
+  }
+  .dv-form-widgets .widget-group .widget.number-widget-box {
+    background: #16181b;
+    border-color: #24292f;
+    box-shadow: none;
+  }
 }
 
 body.dv-dark-style .dropdown-item:hover, body.dv-dark-style .dropdown-item:focus, html[data-theme=dark] .dropdown-item:hover, html[data-theme=dark] .dropdown-item:focus {
