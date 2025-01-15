@@ -129,7 +129,6 @@ def update_theme_settings(**data):
     doc.apply_on_dashboard = data.apply_on_dashboard
     doc.apply_on_workspace = data.apply_on_workspace
     doc.apply_on_navbar = data.apply_on_navbar
-    doc.apply_dark_mode = data.apply_dark_mode
     doc.save(ignore_permissions=True)
     return doc
 
@@ -292,7 +291,6 @@ def update_menu_modules(modules):
                     "custom_menu_title": module['title'],
                     "custom_default_dashboard": module["custom_default_dashboard"] if module["custom_default_dashboard"] else '',
                     "custom_open_dashboard": module["custom_open_dashboard"] if module["custom_open_dashboard"] else 0,
-                    "custom_hide_from_menu": module["custom_hide_from_menu"] if module["custom_hide_from_menu"] else 0,
                     "icon": module["icon"],
                     "sequence_id": int(module["sequence_id"])
                 })
@@ -303,7 +301,6 @@ def update_menu_modules(modules):
                 workspace.custom_menu_title = module["title"]
                 workspace.custom_default_dashboard = module["custom_default_dashboard"] if module["custom_default_dashboard"] else ''
                 workspace.custom_open_dashboard = module["custom_open_dashboard"] if module["custom_open_dashboard"] else 0
-                workspace.custom_hide_from_menu = module["custom_hide_from_menu"] if module["custom_hide_from_menu"] else 0
                 workspace.icon = module["icon"]
                 workspace.content = module["content"]
                 workspace.label = module["label"]
@@ -314,17 +311,6 @@ def update_menu_modules(modules):
                 workspace.save()
 
     return True
-
-
-@frappe.whitelist()
-def get_dashboard_map_data(doctype_name, doctype_field, title_field=None):
-    fields = ["name", doctype_field]
-    if (title_field):
-        fields.append(title_field)
-    if (doctype_name):
-        return frappe.db.get_all(doctype_name, fields=fields)
-    else:
-        return []
 
 
 @frappe.whitelist()
@@ -369,7 +355,7 @@ def update_form_card(cards):
 @frappe.whitelist()
 def get_report_cards(report_name):
     cards_list = []
-    if (report_name):
+    if(report_name):
         cards = frappe.db.get_all("Report Number Card", filters={"report_name": report_name}, fields=["name", "idx", "number_card_name", "report_name", "label"], order_by="idx asc")
         if cards:
             for card in cards:

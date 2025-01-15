@@ -24,7 +24,6 @@
   "hide_layout_pages",
   "apply_color_and_background_section",
   "theme_color",
-  "apply_dark_mode",
   "column_break_kuzx",
   "apply_on_navbar",
   "apply_on_menu",
@@ -43,9 +42,6 @@
   "hide_language_icon",
   "egypt_language_icon",
   "default_workspace",
-  "language_switcher_type",
-  "languages_switcher_section",
-  "languages_list",
   "login_page_section",
   "login_page_logo",
   "enable_background",
@@ -158,7 +154,7 @@
    "label": "Show Help Icon"
   },
   {
-   "description": "Choose your font <a href=\"https://fonts.google.com/\" target=\"_blank\"><b>View Fonts</b></a>",
+   "description": "Chose your font <a href=\"https://fonts.google.com/\" target=\"_blank\">View Fonts</a>",
    "fieldname": "font_style_section",
    "fieldtype": "Section Break",
    "label": "Font Style"
@@ -270,38 +266,11 @@
    "fieldtype": "Table MultiSelect",
    "label": "Hide Layout Pages",
    "options": "Theme Settings Hide Layout Pages"
-  },
-  {
-   "default": "0",
-   "fieldname": "apply_dark_mode",
-   "fieldtype": "Check",
-   "label": "Apply Dark Mode"
-  },
-  {
-   "depends_on": "eval:doc.language_switcher_type=='Custom List'",
-   "description": "Choose language flag <a href=\"https://flagicons.lipis.dev\" target=\"_blank\"><b>View Flags</b></a>",
-   "fieldname": "languages_switcher_section",
-   "fieldtype": "Section Break",
-   "label": "Languages Switcher"
-  },
-  {
-   "default": "Default Languages",
-   "fieldname": "language_switcher_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Language Switcher Type",
-   "options": "Default Languages\nCustom List"
-  },
-  {
-   "fieldname": "languages_list",
-   "fieldtype": "Table",
-   "label": "Languages List",
-   "options": "Theme Settings Languages"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-01-06 14:01:24.873918",
+ "modified": "2024-12-30 07:18:38.352516",
  "modified_by": "Administrator",
  "module": "Datavalue Theme 15",
  "name": "Theme Settings",
