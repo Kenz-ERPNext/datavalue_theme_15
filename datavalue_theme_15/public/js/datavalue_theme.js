@@ -79,6 +79,26 @@
             }
         });
 
+        // change language according to data-language of dropdown item
+        $(this).on("click", "#header-navbar-change-lang .dropdown-item", function (event) {
+            event.preventDefault();
+            let $this = $(this);
+            // $this.siblings(".selected").removeClass("selected");
+            let language = $this.data('lang');
+            let selected_flag = $this.find(".dv-lang-flag").attr("class");
+            $("#header-navbar-change-lang .dropdown-lang-link").html(`<span class="${selected_flag}"></span> ${language}`);
+            frappe.call({
+                method: "datavalue_theme_15.api.change_language",
+                args: {
+                    language: language.toLowerCase()
+                },
+                callback: function (r) {
+                    localStorage.setItem("active_lang", language);
+                    frappe.ui.toolbar.clear_cache();
+                }
+            });
+        });
+
         $(this).on('click', '.side-menu .side-menu-items > ul.dropdown-list > li > a, .side-menu ul.mobile-modules-menu-list > li > a', function () {
             if ($(this).parent().hasClass('active')) {
                 if (!$(this).parent().hasClass('hide-sub-menu')) {
@@ -138,27 +158,6 @@
         });
 
     });
-
-    // change language according to data-language of dropdown item
-    // $(this).on("click", "#header-navbar-change-lang .dropdown-item", function (event) {
-    //     event.preventDefault();
-    //     let $this = $(this);
-    //     console.log('this',$this)
-    //     // $this.siblings(".selected").removeClass("selected");
-    //     let language = $this.data('lang');
-    //     let selected_flag = $this.find(".dv-lang-flag").attr("class");
-    //     // $("#header-navbar-change-lang .dropdown-lang-link").html(`<span class="${selected_flag}"></span> ${language}`);
-    //     frappe.call({
-    //         method: "datavalue_theme_15.api.change_language",
-    //         args: {
-    //             language: language.toLowerCase()
-    //         },
-    //         callback: function (r) {
-    //             localStorage.setItem("active_lang", language);
-    //             frappe.ui.toolbar.clear_cache();
-    //         }
-    //     });
-    // });
 
     $(document).on("page-change", function () {
         $('.btn-open-modules').removeClass('active').find('i').removeClass().addClass('flaticon-menu');
@@ -260,66 +259,37 @@
             delimiters: ["[[", "]]"],
             data: {
                 hide_language_icon: $('body').data('hide-language-icon'),
-                lang_list: [
-                    {
-                        language: 'en',
-                        label: 'English',
-                        language_icon: '/assets/datavalue_theme_15/images/us.svg'
+                egypt_language_icon: (frappe.theme_settings && frappe.theme_settings.egypt_language_icon && frappe.theme_settings.egypt_language_icon === '1') ? 'eg-flag' : '',
+                lang_list: {
+                    EN: {
+                        label: 'EN',
+                        flag: 'dv-lang-flag lang-en'
                     },
-                    {
-                        language: 'ar',
-                        label: 'العربية',
-                        language_icon: (frappe.theme_settings && frappe.theme_settings.egypt_language_icon && frappe.theme_settings.egypt_language_icon === '1') ? '/assets/datavalue_theme_15/images/eg.svg' : '/assets/datavalue_theme_15/images/sa.svg'
+                    AR: {
+                        label: 'AR',
+                        flag: 'dv-lang-flag lang-ar'
                     }
-                ],
-                active_lang: 'en'
-            },
-            computed: {
-                activeLang: function () {
-                    const lang = this.lang_list.filter(l => l.language === this.active_lang);
-                    return (lang && lang[0]) ? lang[0] : {};
-                }
+                },
+                active_lang: 'EN'
             },
             methods: {
-                get_current_language: function (callback) {
+                get_current_language: function () {
                     const $this = this;
                     frappe.call({
                         method: "datavalue_theme_15.api.get_current_language",
                         args: {},
                         callback: function (response) {
                             if (response && response.message && response.message) {
-                                $this.active_lang = response.message;
+                                $this.active_lang = (response.message).toUpperCase();
                             } else {
-                                $this.active_lang = localStorage.getItem("active_lang") || 'en';
+                                $this.active_lang = localStorage.getItem("active_lang").toUpperCase() || 'EN';
                             }
-                            callback();
-                        }
-                    });
-                },
-                change_language: function (language) {
-                    frappe.call({
-                        method: "datavalue_theme_15.api.change_language",
-                        args: {
-                            language: language
-                        },
-                        callback: (r) => {
-                            localStorage.setItem("active_lang", language);
-                            setTimeout(() => {
-                                this.active_lang = language;
-                                frappe.ui.toolbar.clear_cache();
-                            }, 10)
                         }
                     });
                 }
             },
             created: function () {
-                this.get_current_language(() => {
-                    if (frappe.theme_settings.language_switcher_type && frappe.theme_settings.language_switcher_type === 'Custom List') {
-                        if (frappe.theme_settings.languages_list && frappe.theme_settings.languages_list.length) {
-                            this.lang_list = frappe.theme_settings.languages_list;
-                        }
-                    }
-                });
+                this.get_current_language();
             }
         });
 

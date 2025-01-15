@@ -49,13 +49,6 @@ def get_context(context):
     theme_settings = frappe.db.sql(""" SELECT * FROM tabSingles WHERE doctype = 'Theme Settings'; """, as_dict=True)
     for theme_setting in theme_settings:
         theme_settings_list[theme_setting['field']] = theme_setting['value']
-        if (theme_settings_list.get('language_switcher_type') and theme_settings_list.get('language_switcher_type') == 'Custom List'):
-            languges_list = []
-            get_languages = frappe.db.get_all('Theme Settings Languages', filters={'parent': 'Theme Settings'}, fields=["idx", "language", "language_icon"], order_by='idx asc')
-            for language in get_languages:
-                language.label = frappe.db.get_value('Language', language.language, 'language_name')
-                languges_list.append(language);
-            theme_settings_list['languages_list'] = languges_list
         theme_settings_list['hide_layout_pages'] = frappe.db.get_all('Theme Settings Hide Layout Pages', filters={'parent': 'Theme Settings'}, fields=["name", "page_name"], pluck="page_name")
 
     # TODO: Find better fix
@@ -63,12 +56,6 @@ def get_context(context):
     boot_json = json.dumps(boot_json)
     desk_theme = frappe.db.get_value("User", frappe.session.user, "desk_theme")
     theme = 'light'
-
-    if (theme_settings_list.get('apply_dark_mode') and theme_settings_list.get('apply_dark_mode') == '1'):
-        theme = 'dark'
-    else:
-        theme = 'light'
-
     if (desk_theme == 'Dark'):
         theme = 'dark'
 

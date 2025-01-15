@@ -2908,23 +2908,6 @@ button.btn.btn-default {
   font-size: 14px;
   font-weight: 700 !important;
 }
-.grid-body .grid-static-col .btn-default[data-fieldtype=Attach] {
-  height: 24px !important;
-  padding: 1px 8px;
-  margin: 2px;
-}
-.grid-body .grid-static-col .btn-default[data-fieldtype=Attach]:before {
-  display: inline-block;
-  margin-right: 2px;
-  font-family: "Font Awesome 5 Pro", serif;
-  font-weight: 400;
-  font-size: 12px;
-  content: "\f0c6";
-}
-.grid-body .frappe-control[data-fieldtype=Attach] .attached-file,
-.grid-body .frappe-control[data-fieldtype="Attach Image"] .attached-file {
-  padding: 3px 10px;
-}
 .grid-body .static-area.ellipsis {
   height: 28px;
   line-height: 23px;
@@ -4083,12 +4066,6 @@ input[type=text].chosen-focus-input {
   min-width: 150px;
   margin-top: -3px;
 }
-.dv-navbar .dv-nav-right > ul > li.dv-dropdown-separator {
-  background: #e5e5e5;
-  width: 1px;
-  height: 30px;
-  margin: 15px 0 0 10px;
-}
 .dv-navbar .dv-nav-right > ul > li.dv-dropdown-notifications > a {
   display: block;
   padding: 0;
@@ -4172,17 +4149,6 @@ input[type=text].chosen-focus-input {
 .dv-navbar .dv-nav-right > ul > li.dropdown-language > a.dropdown-lang-link .dv-lang-flag.lang-ar.eg-flag {
   background: url(/assets/datavalue_theme_15/images/eg.svg) no-repeat center center;
 }
-.dv-navbar .dv-nav-right > ul > li.dropdown-language > a.dropdown-lang-link img {
-  background: #eee;
-  background-size: 100% 100% !important;
-  display: block;
-  float: left;
-  width: 22px;
-  height: 22px;
-  margin-right: 6px;
-  margin-top: 5px;
-  border-radius: 100%;
-}
 .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu {
   box-shadow: 0px 1px 4px rgba(17, 43, 66, 0.1), 0px 2px 6px rgba(17, 43, 66, 0.08) !important;
   border: none;
@@ -4195,16 +4161,6 @@ input[type=text].chosen-focus-input {
   font-weight: 400;
   padding: 5px 10px;
   transition: all 0.2s ease-in-out;
-}
-.dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item img {
-  background: #eee;
-  background-size: 100% 100% !important;
-  display: block;
-  float: left;
-  width: 18px;
-  height: 18px;
-  margin-right: 6px;
-  border-radius: 100%;
 }
 .dv-navbar .dv-nav-right > ul > li.dropdown-language .dropdown-menu .dropdown-item .dv-lang-flag {
   background: #eee;
@@ -5557,19 +5513,6 @@ html[data-theme=dark] body.layout-navbar-color-style .dv-navbar {
 html[data-theme=dark] body.layout-navbar-color-style .dv-navbar .dv-nav-right > ul > li.dropdown-user > a .dv-user-info span.user-name {
   color: #000;
 }
-html[data-theme=dark] .widget.number-widget-box {
-  background-color: #16181b;
-  border: 1px solid var(--border-color);
-  box-shadow: none;
-}
-html[data-theme=dark] .report-summary {
-  background-color: var(--bg-color);
-}
-html[data-theme=dark] .dv-form-widgets .widget-group .widget.number-widget-box {
-  background: #16181b;
-  border-color: #24292f;
-  box-shadow: none;
-}
 body.dv-dark-style .dropdown-item:hover,
 body.dv-dark-style .dropdown-item:focus,
 html[data-theme=dark] .dropdown-item:hover,
@@ -6706,4 +6649,4 @@ body.frappe-rtl .frappe-control[data-fieldtype=Select].form-group select {
     margin-right: 5px;
   }
 }
-/*# sourceMappingURL=datavalue_theme.bundle.NVEVX6BM.css.map */
+/*# sourceMappingURL=datavalue_theme.bundle.7KGIMJK4.css.map */
