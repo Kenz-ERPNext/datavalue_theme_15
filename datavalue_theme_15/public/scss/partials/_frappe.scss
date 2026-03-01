@@ -1388,6 +1388,10 @@ button.btn.btn-default {
   padding-left: 35px !important;
 }
 
+.form-grid-container {
+  overflow-x: auto !important;
+}
+
 .form-grid {
   .input-group {
     flex-wrap: nowrap;

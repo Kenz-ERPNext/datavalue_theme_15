@@ -1,5 +1,5 @@
 /*
-* Data Value Custom Scripts
+* Kenz Technology Custom Scripts
 */
 
 (function ($) {

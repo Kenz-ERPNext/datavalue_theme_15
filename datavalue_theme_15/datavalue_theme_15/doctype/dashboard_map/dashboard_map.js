@@ -1,10 +1,10 @@
 // Copyright (c) 2024, Abdo Hamoud and contributors
 /*
-* Data Value Team
+* Kenz Technology Team
 * Author: Abdo Hamoud
 * Email: abdo.host@gmail.com
 * Website: https://www.abdo-host.com
-* Website: https://www.datavalue.solutions
+* Website: https://kenztechnology.com
 */
 
 frappe.ui.form.on("Dashboard Map", {

@@ -1,4 +1,4 @@
-## Datavalue Theme 15
+## Kenz Technology Theme
 
 Frappe 15 Theme App
 

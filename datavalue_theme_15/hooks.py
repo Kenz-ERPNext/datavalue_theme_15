@@ -2,7 +2,7 @@ from . import __version__ as version
 
 app_version = version
 app_name = "datavalue_theme_15"
-app_title = "Datavalue Theme 15"
+app_title = "Kenz Technology Theme"
 app_publisher = "Abdo Hamoud"
 app_description = "Frappe 15 Theme App"
 app_email = "abdo.host@gmail.com"
