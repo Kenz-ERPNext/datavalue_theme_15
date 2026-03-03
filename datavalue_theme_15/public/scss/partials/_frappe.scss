@@ -1132,7 +1132,6 @@ button.btn.btn-default {
     position: absolute;
     top: 0;
     right: 0;
-    display: none !important;
 
     .btn.btn-primary {
       width: 30px;
@@ -1387,6 +1386,15 @@ button.btn.btn-default {
 
 .grid-body .grid-static-col .form-control[data-fieldtype="Icon"] {
   padding-left: 35px !important;
+}
+
+.form-grid-container {
+  overflow-x: auto !important;
+
+  &:has(.grid-row-open),
+  &:has(input[aria-expanded="true"]) {
+    overflow: visible !important;
+  }
 }
 
 .form-grid {
